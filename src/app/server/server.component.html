@@ -1,1 +1,2 @@
-<p> I am Seerver Component</p>
+<hr>
+<p [ngStyle]="{ backgroundColor:getColor()}" [ngClass]="{online:serverStatus==='online'}"> {{'Server '}} Id: {{  serverId }} is server status {{ serverStatus }} </p>

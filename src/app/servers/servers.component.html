@@ -1,0 +1,20 @@
+<hr>
+<label for="serverChange">Server Name</label>
+<input type="text" id="serverChange"  class="form-control" (input)="onServeChange($event)">
+<hr>
+<!--p> {{ serverName }} </p-->
+<br>
+<button class=" btn btn-primary" [disabled]="allowedServer" (click)="onCreateServer()"> Add Server</button>
+
+<hr>
+{{ serverCreateStatus }}
+
+<p *ngIf="serverCreated; else noServer"> Server Was Created, Server name Is: {{serverName}} </p>
+<ng-template #noServer>
+  <p>
+    No Server Created
+  </p>
+</ng-template>
+
+<hr>
+<app-server *ngFor="let serv of servers"></app-server>
